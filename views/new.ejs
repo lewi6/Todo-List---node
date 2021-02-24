@@ -1,0 +1,26 @@
+<form action="/todos" method="POST">
+  <div>
+    <label>title : </label> 
+    <input name="todo[title]" placeholder="title" type="text">
+  </div>
+  <hr>
+  <div>
+    <label>Priority : </label> 
+    <select name="todo[priority]">
+      <option value="1">High</option>
+      <option value="2">Medium</option>
+      <option value="3">Low</option>
+    </select>
+    <hr>
+  </div>
+  <div>
+    <label>Description : </label> 
+    <textarea name="todo[description]"  cols="30" rows="10"></textarea>
+  </div>
+
+  
+    
+    
+  <input type="submit">
+
+</form>

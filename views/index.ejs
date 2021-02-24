@@ -1,0 +1,31 @@
+<h1>Todo List</h1>
+
+<form action="/search" method="POST">
+  <input type="text" name="look" placeholder="search for todo by title name">
+  <button type="submit">Search</button>
+</form>
+
+<a href="/todos/new">Anotha wan</a>
+
+<a href="/export"> export csv</a>
+<a href="/todos">home</a>
+<% todos.forEach(function(b){ %>
+  <div>
+    
+    <h2> <%= b.title %> </h2>
+    <!-- <h5> <%= b.description %> </h5> -->
+    <p> <%= b.created.toDateString() %> </p>
+
+    <% if(b.priority == 1) { %>
+      <p>priority: High</p>
+      <% } else if(b.priority == 2) { %>
+      <p>priority : Medium</p>
+      <% } else  { %>
+      <p>priority : Low</p>
+    <% } %>
+
+    <a href="/todos/<%= b._id %>">Read more</a>
+
+    <h6>==============================</h6>
+  </div>
+<% }) %> 

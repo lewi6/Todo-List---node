@@ -1,0 +1,32 @@
+<div>
+    
+   <h2> <%- todo.title %> </h2>
+    <h5>Description : <%- todo.description %> </h5>
+  <h5>Created on : <%- todo.created %> </h5>
+<!-- Set the priority in case we would want to sort -->
+  <% if(todo.priority == 1) { %>
+      <h5>priority: High</h5>
+  <% } else if(todo.priority == 2) { %>
+      <h5>priority : Medium</h5>
+  <% } else  { %>
+    <h5>priority : Low</h5>
+  <% } %>
+
+
+  
+  
+  </h5>
+
+
+
+  <% if(todo.modified) { %>
+    <h3>modified:  <%- todo.modified %> </h5>
+  <% } %>
+
+ <form action="/todos/<%= todo._id %>?_method=DELETE" method="post">
+  <button type="submit">Delete</button>
+ </form>
+ 
+ <a href="/todos/<%= todo._id%>/edit">Edit</a>
+  <a href="/todos">Home</a>
+</div>

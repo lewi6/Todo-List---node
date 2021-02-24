@@ -1,0 +1,26 @@
+<form action="/todos/<%= todo._id %>?_method=PUT" method="POST">
+  <div>
+    <label>title : </label> 
+    <input name="todo[title]" value="<%=todo.title%>" placeholder="title" type="text">
+  </div>
+  <hr>
+  <div>
+    <label>Priority : </label> 
+    <select value="<%=todo.priority%>" name="todo[priority]">
+      <option value="1">High</option>
+      <option value="2">Medium</option>
+      <option value="3">Low</option>
+    </select>
+    <hr>
+  </div>
+  <div>
+    <label>Description : </label> 
+    <textarea name="todo[description]"  cols="30" rows="10"> <%=todo.description%>  </textarea>
+  </div>
+  <!-- <% todo.modified =Date(Date.now()) %>
+  <input type="text" name="todo[modified]" value="<%= todo.modified %>" >
+  <h3  >modified on: <%= todo.modified  %></h3> -->
+
+  <input type="submit">
+  <a href="/todos">Discard</a>
+</form>
